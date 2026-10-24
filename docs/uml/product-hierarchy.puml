@@ -1,0 +1,39 @@
+@startuml
+
+class Product {
+   - id : Long
+   - name : String
+   - price : double
+   + Product()
+   + Product(id : Long, name : String, price : double)
+   + getId() : Long
+   + getName() : String
+   + getPrice() : double
+   + setId(id : Long) : void
+   + setName(name : String) : void
+   + setPrice(price : double) : void
+}
+
+class DigitalProduct {
+   - downloadUrl : String
+   - fileSizeMB : double
+   + DigitalProduct()
+   + DigitalProduct(id : Long, name : String, price : double, downloadUrl : String, fileSizeMB : double)
+   + getDownloadUrl() : String
+   + getFileSizeMB() : double
+}
+
+class PhysicalProduct {
+   - weightKg : double
+   - dimensions : String
+   + PhysicalProduct()
+   + PhysicalProduct(id : Long, name : String, price : double, weightKg : double, dimensions : String)
+   + getWeightKg() : double
+   + getDimensions() : String
+}
+
+' <|-- is the inheritance arrow. The PARENT goes on the left.
+Product <|-- DigitalProduct
+Product <|-- PhysicalProduct
+
+@enduml
